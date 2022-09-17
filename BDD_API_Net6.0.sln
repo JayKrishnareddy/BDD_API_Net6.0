@@ -5,8 +5,6 @@ VisualStudioVersion = 17.3.32901.215
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BDD_API_Net6.0", "BDD_API_Net6.0\BDD_API_Net6.0.csproj", "{54684C14-9A4B-4CF8-AE51-E0A50ADB8490}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeTests", "EmployeeTests\EmployeeTests.csproj", "{E727EA85-08BC-4F1F-965E-18B8E17A28C0}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{54684C14-9A4B-4CF8-AE51-E0A50ADB8490}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54684C14-9A4B-4CF8-AE51-E0A50ADB8490}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{54684C14-9A4B-4CF8-AE51-E0A50ADB8490}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E727EA85-08BC-4F1F-965E-18B8E17A28C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E727EA85-08BC-4F1F-965E-18B8E17A28C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E727EA85-08BC-4F1F-965E-18B8E17A28C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E727EA85-08BC-4F1F-965E-18B8E17A28C0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
