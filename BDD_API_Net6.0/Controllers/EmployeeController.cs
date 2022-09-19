@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Security.Cryptography.X509Certificates;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -8,36 +9,50 @@ namespace BDD_API_Net6._0.Controllers
     [ApiController]
     public class EmployeeController : ControllerBase
     {
-        // GET: api/<EmployeeController>
-        [HttpGet]
-        public IEnumerable<string> Get()
+       public List<Employee> employees = new();
+        public EmployeeController()
         {
-            return new string[] { "value1", "value2" };
+            employees = new List<Employee>()
+            {
+                new Employee { Id = 1, Name = "Jay Krishna Reddy", Age = 26 },
+                new Employee { Id = 2, Name = "Tom", Age = 36 },
+                new Employee { Id = 3, Name = "Micheal", Age = 46 },
+                new Employee { Id = 4, Name = "Henrik", Age = 28 },
+                new Employee { Id = 5, Name = "Stefan", Age = 56 },
+            };
+        }
+        // GET: api/<EmployeeController>
+        [HttpGet(nameof(GetEmployeeList))]
+        public List<Employee> GetEmployeeList()
+        {
+            return employees;
         }
 
         // GET api/<EmployeeController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public Employee Get(int id)
         {
-            return "value";
+            return employees.FirstOrDefault(c => c.Id.Equals(id));
         }
 
         // POST api/<EmployeeController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public List<Employee> Post([FromBody] Employee employee)
         {
+            employees.Add(new Employee
+            {
+                Id = employee.Id,
+                Name = employee.Name,
+                Age = employee.Age
+            });
+            return employees;
         }
+    }
 
-        // PUT api/<EmployeeController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/<EmployeeController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
+    public class Employee
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public int Age { get; set; }        
     }
 }
