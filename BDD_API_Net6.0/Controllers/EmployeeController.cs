@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Security.Cryptography.X509Certificates;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -14,7 +13,7 @@ namespace BDD_API_Net6._0.Controllers
         {
             employees = new List<Employee>()
             {
-                new Employee { Id = 1, Name = "Jay Krishna Reddy", Age = 26 },
+                new Employee { Id = 1, Name = "JKR", Age = 26 },
                 new Employee { Id = 2, Name = "Tom", Age = 36 },
                 new Employee { Id = 3, Name = "Micheal", Age = 46 },
                 new Employee { Id = 4, Name = "Henrik", Age = 28 },
@@ -30,7 +29,7 @@ namespace BDD_API_Net6._0.Controllers
 
         // GET api/<EmployeeController>/5
         [HttpGet("{id}")]
-        public Employee Get(int id)
+        public Employee GetEmployee(int id)
         {
             return employees.FirstOrDefault(c => c.Id.Equals(id));
         }
